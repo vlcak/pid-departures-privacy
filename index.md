@@ -4,13 +4,13 @@ title: Privacy policy — PID Departures
 
 # Privacy policy — PID Departures
 
-**Effective date:** 20 October 2026
+**Effective date:** 21 October 2026
 
 PID Departures shows public transport stop and departure information for Prague Integrated Transport (PID). The app works without an account.
 
 ## Data stored on your device
 
-Favorites and their filters/order, source and radius preferences, cached PID stop details and departure results, widget configurations, and reminder settings (including one-time and recurring connection reminders) are stored locally in app-private storage. The app does not synchronize this data to an account or cloud profile. Clearing the app's storage or uninstalling it removes the locally stored app data.
+Favorites and their filters/order, nearby radius and transport preferences, cached PID stop details and departure results, per-widget configurations (including source selection and background transparency), and reminder settings are stored locally in app-private storage. The app does not synchronize this data to an account or cloud profile. Clearing the app's storage or uninstalling it removes the locally stored app data.
 
 ## Location
 
@@ -30,7 +30,7 @@ Golemio receives the proxy's stop, time-window, and trip-detail queries. See [Go
 
 The app contains no advertising, analytics, account sign-in, or cross-device tracking. Departure reminders are optional local notifications, configured per favorite line or a specific displayed connection as a one-off, daily, or selected-weekday schedule. They use Android WorkManager and timetable data; notification permission is requested only when enabling reminders. Android may defer work; reminders are best-effort and are not guaranteed live-arrival predictions. The app does not use server push or continuous background departure polling.
 
-Home-screen widgets are configured independently and display locally cached departures. Widget updates follow Android's permitted refresh behavior and are not guaranteed to be continuous.
+Home-screen widgets are configured independently and display locally cached departures with cache timestamps. A network-constrained Android WorkManager task requests departures for their configured public stop IDs about every 15 minutes and after setup/reconfiguration, including while the app is backgrounded. Nearby widgets select stops on-device using only a recent foreground location fix; the task does not request a new location or send coordinates. Android may defer widget updates; continuous refresh is not guaranteed.
 
 ## Changes and contact
 
